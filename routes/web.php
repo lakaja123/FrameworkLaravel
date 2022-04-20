@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MainController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('main');
+
+
 
 Route::get('my-name', function () {
     return view('Максмм Дятлов');
@@ -72,4 +74,11 @@ Route::get('color/{hex}', function ($hex) {
     //
 })->where('hex', '[A-F0-9]{1,6}');
 
+Route::middleware('validationToken')->group(function () {
+   Route::get('project', function() { return 'Project One';});
+});
 
+Route::get('main', [MainController::class, 'test']);
+Route::get('ip', [MainController::class, 'index']);
+
+Route::get('user/{id}', [MainController::class, 'user'])->whereNumber('id');
