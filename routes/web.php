@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use \App\Http\Controllers\TestController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -82,3 +83,13 @@ Route::get('main', [MainController::class, 'test']);
 Route::get('ip', [MainController::class, 'index']);
 
 Route::get('user/{id}', [MainController::class, 'user'])->whereNumber('id');
+
+Route::get('my-route', [TestController::class, 'lessonOne']);
+Route::get('data', [TestController::class, 'lessonTow']);
+
+Route::get('chrt', [TestController::class, 'loveChrt']);
+Route::get('nI', [TestController::class, 'nameIvan']);
+Route::get('nIA', [TestController::class, 'nameIvanApple']);
+Route::get('sP', [TestController::class, 'sumProgram']);
+Route::get('sG', [TestController::class, 'sumGet']);
+Route::get('cip', [TestController::class, 'Cipher']);
