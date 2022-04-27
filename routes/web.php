@@ -93,3 +93,12 @@ Route::get('nIA', [TestController::class, 'nameIvanApple']);
 Route::get('sP', [TestController::class, 'sumProgram']);
 Route::get('sG', [TestController::class, 'sumGet']);
 Route::get('cip', [TestController::class, 'Cipher']);
+
+Route::get('template/{detach}', [TestController::class, 'lessonTemplateOne']);
+Route::get('textpolcon', [TestController::class, 'TextPolCon']);
+Route::get('textpolconorg', [TestController::class, 'TextPolConOrg']);
+Route::get('myfavouritestring', [TestController::class, 'MyFavouriteString']);
+Route::get('noski', [TestController::class, 'NoskiColor']);
+Route::get('palki', [TestController::class, 'PalkiSize']);
+Route::get('chisla', [TestController::class, 'ChislaChet']);
+

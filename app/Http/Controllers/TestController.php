@@ -60,4 +60,46 @@ class TestController extends Controller
             }
         }
     }
+    public function lessonTemplateOne($detach) {
+        $detachment = 'Нет отряда';
+        switch($detach) {
+            case 1: $detachment = 'Отряд 287'; break;
+            case 2: $detachment = 'Отряд 54'; break;
+            case 3: $detachment = 'Отряд 925'; break;
+            case 4: $detachment = 'Отряд 9'; break;
+            default: $detachment = '-';
+        }
+
+
+        $user = [];
+        $user[] = 'Иванов Иван Иванович';
+        $user[] = 'Петров Аркадий Иванович';
+        $user[] = 'Люлькин Акакий Романович';
+
+
+        return view('template', compact('detachment', 'user'));
+    }
+    public function TextPolCon() {
+        return view('textpolcon');
+    }
+    public function TextPolConOrg() {
+        $organization = "ООО Школа Совета";
+        return view('textpolconorg', compact('organization'));
+    }
+    public function MyFavouriteString() {
+        $favourite = "Есть преступления хуже, чем сжигать книги";
+        return view('myfavouritestring', compact('favourite'));
+    }
+    public function NoskiColor() {
+        $noski = ['Белые', 'Синие', 'Красные'];
+        return view('noski', compact('noski'));
+    }
+    public function PalkiSize() {
+        $palki = ['Большие', 'Средние', 'Маленькие'];
+        return view('palki', compact('palki'));
+    }
+    public function ChislaChet() {
+        $chisla = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        return view('chisla', compact('chisla'));
+    }
 }
